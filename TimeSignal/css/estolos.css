@@ -1,0 +1,49 @@
+:root{
+  --verde-escuro:#0B3D1F;
+  --verde-claro:#2ECC71;
+  --amarelo:#F1C40F;
+  --vermelho:#F1948A; /* vermelho claro */
+}
+
+/* Geral */
+body{ background:#f8f9fa; font-size:17px; color:#0b2e22; }
+.navbar{ background:var(--verde-escuro) !important; }
+
+/* Lista comum */
+.list-group-item{ display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:17px; }
+
+/* Tarefas - urgências (mantém compatibilidade) */
+.urg-normal{ border-left:8px solid var(--verde-claro); background:#e8f9ef; }
+.urg-importante{ border-left:8px solid var(--amarelo); background:#fff7d9; }
+.urg-urgente{ border-left:8px solid var(--vermelho); background:#ffecec; }
+
+/* Botões */
+.btn-concluir{ background:var(--verde-claro); color:#fff; border:0; border-radius:6px; padding:6px 10px; }
+.btn-excluir{ background:transparent; border:0; font-size:18px; color:var(--vermelho); }
+
+/* Progress */
+.progress{ height:25px; border-radius:12px; background:#e9f6ef; }
+.progress-bar{ background:linear-gradient(90deg,var(--verde-escuro),var(--verde-claro)); font-weight:700; }
+
+/* Observações - item com bolinha colorida */
+.obs-item{ display:flex; gap:12px; align-items:flex-start; padding:10px; border-radius:8px; margin-bottom:8px; }
+.obs-dot{ width:12px; height:12px; border-radius:50%; margin-top:6px; flex:0 0 12px; }
+.obs-normal{ background:var(--verde-claro); }
+.obs-importante{ background:var(--amarelo); }
+.obs-urgente{ background:var(--vermelho); }
+
+/* Observação texto */
+.obs-content{ flex:1; }
+
+/* Histórico */
+#historicoObservacoes .card{ margin-bottom:8px; }
+
+/* Mensagens simples (alertas temporários) */
+.alert-msg{ position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background:#2ecc71; color:#fff; padding:10px 16px; border-radius:10px; z-index:9999; opacity:0; transition:all .25s; }
+.alert-msg.show{ opacity:1; bottom:30px; }
+
+/* Acessibilidade foco */
+:focus{ outline:3px solid var(--verde-claro); outline-offset:3px; }
+
+/* Responsivo */
+@media (max-width:768px){ body{ font-size:16px; } .input-group .form-control{ min-width:0; } }
